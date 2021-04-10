@@ -10,7 +10,7 @@
 #include <memory>
 
 date_t get_date();
-uint8_t get_location();
+location_t get_location();
 
 class user_t {
 public:

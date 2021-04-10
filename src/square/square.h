@@ -12,12 +12,12 @@
 class square_t{
 	public:
 		std::deque<uint8_t> scores;
-		uint8_t max_cnt = 10;
-		uint8_t avr_score;
+		size_t max_cnt = 10;
+		size_t avr_score;
 		std::deque<comment_t> comments;
 		
 		square_t() {
-			for(int i = 0; i < max_cnt; i++){
+			for(size_t i = 0; i < max_cnt; i++){
 				scores.push_front(10);
 			}
 			avr_score = 10;

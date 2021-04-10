@@ -22,9 +22,10 @@ location_t get_location() {
 	std::cout << "Insert your current location\n";
 	global_location_base().print();
 	location_t loc;
-	std::cout << "total number: " << global_location_base().count() << '\n';
 	std::cout << "Enter: ";
 	std::cin >> loc;
+
+	std::cout << loc << ' ' << global_location_base().count() << ' ' << (loc < global_location_base().count()) << '\n';
 
 	if (loc < global_location_base().count())
 		return loc;

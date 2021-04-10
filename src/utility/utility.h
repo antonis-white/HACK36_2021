@@ -25,18 +25,17 @@ std::ostream& operator<<(std::ostream& out, const user_base& base);
 
 user_base& global_user_base();                 
 
-using location_t = uint8_t;
+using location_t = unsigned int;
 
 class location_base {
-	size_t number;
+	location_t number;
 	std::vector<std::string> hv;
 public:
 	location_base();
-	size_t count();
+	location_t count();
 	void print();
 	friend std::istream& operator>>(std::istream& in, location_base& base);
 	friend std::ostream& operator<<(std::ostream& out, const location_base& base);
-
 };
 
 location_base& global_location_base();

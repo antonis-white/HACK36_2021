@@ -35,14 +35,16 @@ user_base& global_user_base() {
 
 location_base::location_base() {}
 
-size_t location_base::count() {
+location_t location_base::count() {
 	return number;
 }
 
 void location_base::print() {
 	int ind = 0;
-	for (auto& s : hv)
+	for (auto& s : hv) {
 		std::cout << ind << ". " << s << '\n';
+		++ind;
+       	}
 }
 
 std::istream& operator>>(std::istream& in, location_base& base) {
