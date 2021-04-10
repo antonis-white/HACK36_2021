@@ -11,9 +11,9 @@
 
 class square_t{
 	public:
-		std::deque<uint8_t> scores;
+		std::deque<int> scores;
 		size_t max_cnt = 10;
-		size_t avr_score;
+		int avr_score;
 		std::deque<comment_t> comments;
 		
 		square_t() {

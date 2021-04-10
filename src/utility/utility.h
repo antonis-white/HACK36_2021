@@ -7,6 +7,8 @@
 #include <deque>
 #include <queue>
 #include <memory>
+#include <fstream>
+
 
 class user_base {
 private:
@@ -20,25 +22,25 @@ public:
 	friend std::ostream& operator<<(std::ostream& out, const user_base& base);
 };
 
-std::istream& operator>>(std::istream& in, user_base& base);
-std::ostream& operator<<(std::ostream& out, const user_base& base);
+user_base& global_user_base();
 
-user_base& global_user_base();                 
+///---------------------location base----------------------------------///               
 
 using location_t = unsigned int;
 
 class location_base {
-	location_t number;
 	std::vector<std::string> hv;
 public:
 	location_base();
-	location_t count();
+	location_t count() const;
 	void print();
 	friend std::istream& operator>>(std::istream& in, location_base& base);
 	friend std::ostream& operator<<(std::ostream& out, const location_base& base);
 };
 
 location_base& global_location_base();
+
+///---------------------date----------------------------///
 
 using date_t = std::string;
 int transform_string(const std::string& s){
@@ -117,10 +119,14 @@ public:
 		rating = 0;
 	}
  
-	void like(){rating ++;}
-	void dislike(){rating --;}
+	void like() { ++rating; }
+	void dislike(){ --rating; }
 	friend std::ostream& operator<< (std::ostream &out, const comment_t &ct){
-		out << ct.username << ", " << ct.cur_date << std::endl << "Rating: " << ct.rating << std::endl << ct.text;
+		out << '\t' << ct.cur_date << '\n';
+		if (ct.rating > 0) out << '+';
+		if (ct.rating < 0) out << '-';
+		out << ct.rating << " | " << ct.username << '\n';
+		out << '\t' << ct.text;
 		return out; 
 	}
 };
