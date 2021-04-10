@@ -52,6 +52,7 @@ int transform_string(const std::string& s){
 	}
 	return res;
 }
+
 bool is_year_leap(int y){
 	if(y % 400 == 0) return 1;
 	else{
@@ -62,6 +63,7 @@ bool is_year_leap(int y){
 		}
 	}
 }
+
 bool is_correct_date(date_t cur_date){
 	std::vector <std::string> cur;
 	cur.resize(3);
@@ -82,6 +84,9 @@ bool is_correct_date(date_t cur_date){
 		}
 		else return 0;
 	}
+
+	if(cnt_of_points < 2) return 0;
+	
 	d = transform_string(cur[0]);
 	m = transform_string(cur[1]);
 	y = transform_string(cur[2]);
@@ -107,6 +112,7 @@ bool is_correct_date(date_t cur_date){
 	}
 	return 1;
 }
+
 class comment_t{
 public:
 	std::string username, text;

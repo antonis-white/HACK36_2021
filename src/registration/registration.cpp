@@ -5,6 +5,13 @@ user_t::user_t(const std::string& name, date_t date, location_t location) :
 		date(date), 
 		location(location) {}
 
+void print_cap(user_ptr& user) {
+	print_sep_line();
+	std::cout << "Username: " << user->name << '\n';
+	std::cout << "Location: " << global_location_base()[user->location] << '\n';
+	std::cout << "Safety level: " << '\n';
+	std::cout << "Number of comments: " << '\n';
+}
 
 date_t get_date() {
 	date_t date;

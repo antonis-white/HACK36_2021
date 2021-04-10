@@ -22,24 +22,28 @@ class square_t{
 			}
 			avr_score = 10;
 		}
-
-		void fnd_average_score(){
+		                          
+		void get_average_score() {
 			avr_score = 0;
 			for(auto it = scores.begin(); it != scores.end(); it++)
 				avr_score += *it;
 			avr_score /= scores.size();
 		}
 
-		void add_score(int x){
+		void add_score(int x) {
 			scores.push_front(x);
 			if(scores.size() > max_cnt)
 				scores.pop_back();
 			fnd_average_score();
 		}
 
-		void add_comment(comment_t x){
+		void add_comment(comment_t x) {
 			comments.push_front(x);
 			if(comments.size() > max_cnt)
 				comments.pop_back();
+		}
+
+		size_t comment_count() {
+			return comments.size();
 		}
 };

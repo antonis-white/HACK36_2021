@@ -12,6 +12,8 @@
 date_t get_date();
 location_t get_location();
 
+void print_cap(user_ptr& user);
+
 class user_t {
 public:
 	std::string name;
