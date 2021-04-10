@@ -27,5 +27,7 @@ HACK36 project repository
     1. In large perspective our application
     requires advanced database, graphics, server manipulation
     2. We prepared out little working prototype.
+    3. We haven't implemented visual part yet, 
+    but console application works fine.
 
 * Executable: bin/Main
