@@ -7,16 +7,39 @@
 #include <deque>
 #include <queue>
 #include <memory>
-                        
+
+class user_base {
+private:
+	std::map<std::string, std::string> name_pwd;
+	
+public:
+	bool have_user(const std::string& name);
+	bool is_correct_pwd(const std::string& name, const std::string& pwd);
+	void add_user(const std::string& name, const std::string& pwd);
+	friend std::istream& operator>>(std::istream& in, user_base& base);
+	friend std::ostream& operator<<(std::ostream& out, const user_base& base);
+};
+
+std::istream& operator>>(std::istream& in, user_base& base);
+std::ostream& operator<<(std::ostream& out, const user_base& base);
+
+user_base& global_user_base();                 
 
 using location_t = uint8_t;
 
-constexpr location_t number_of_locations = 1;
+class location_base {
+	size_t number;
+	std::vector<std::string> hv;
+public:
+	location_base();
+	size_t count();
+	void print();
+	friend std::istream& operator>>(std::istream& in, location_base& base);
+	friend std::ostream& operator<<(std::ostream& out, const location_base& base);
 
-std::string location[number_of_locations] = {"Kuzminki"};
+};
 
-location_t get_number_of_locations();
-void print_locations();
+location_base& global_location_base();
 
 using date_t = std::string;
 int transform_string(const std::string& s){

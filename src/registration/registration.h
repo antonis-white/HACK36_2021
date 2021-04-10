@@ -30,18 +30,3 @@ user_ptr sign_in(date_t date, location_t loc);
 user_ptr sign_up(date_t date, location_t loc);
 
 user_ptr registration();
-
-class user_base {
-private:
-	std::map<std::string, std::string> name_pwd;
-	
-public:
-	bool have_user(const std::string& name);
-	bool is_correct_pwd(const std::string& name, const std::string& pwd);
-	void add_user(const std::string& name, const std::string& pwd);
-	friend std::istream& operator>>(std::istream& in, user_base& base);
-	friend std::ostream& operator<<(std::ostream& out, const user_base& base);
-} global_user_base;
-
-std::istream& operator>>(std::istream& in, user_base& base);
-std::ostream& operator<<(std::ostream& out, const user_base& base);
