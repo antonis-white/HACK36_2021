@@ -28,3 +28,11 @@ function(create_library LIBNAME)
 
 	set_property(GLOBAL PROPERTY TARGET_LIST "${TARGET_LIST_VAR};${LIBNAME}")
 endfunction()
+
+create_library(application)
+create_library(interface)
+create_library(comment)
+create_library(registration)
+create_library(square)
+create_library(graphics)
+create_library(utility)
