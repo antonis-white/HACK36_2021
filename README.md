@@ -1,7 +1,15 @@
 # HACK36_2021
 HACK36 project repository
 
-* Theme: Women's safety
+* Project name: Olyauha
+
+* Track: Women's safety
+
+* Team: valentin_video_monitoring
+
+* Contributors: 
+    1. Anton Belyi (MIPT, Russia)
+    2. Dmitry Anokhov (MPEI, Russia)
 
 * Idea:
     After discussing women's safety theme with
@@ -28,6 +36,16 @@ HACK36 project repository
     requires advanced database, graphics, server manipulation
     2. We prepared out little working prototype.
     3. We haven't implemented visual part yet, 
-    but console application works fine.
+    but console application works fine, and even stores data 
+    on computer after build.
 
-* Executable: bin/Main
+* How to build and run: (Linux or Windows+msys2)
+    1. mkdir some_folder
+    2. cd some_folder
+    3. git clone https://github.com/antonis-white/HACK36_2021.git .
+    4. mkdir build
+    5. cd build
+    6. cmake ..
+    7. make
+    8. cd ..
+    9. ./run.sh
