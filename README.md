@@ -11,6 +11,11 @@ HACK36 project repository
     1. Anton Belyi (MIPT, Russia)
     2. Dmitry Anokhov (MPEI, Russia)
 
+* Tech stack:
+    1. c++
+    2. cmake
+    3. bash
+
 * Idea:
     After discussing women's safety theme with
     female part of Karelia programming community,
