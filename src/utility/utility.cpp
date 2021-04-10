@@ -70,14 +70,11 @@ void location_base::print() {
 std::istream& operator>>(std::istream& in_, location_base& base) {
 	std::ifstream in("../src/utility/location_data_base.txt", std::ios::in);
     	
-    	//std::string str;
-    	//std::getline(in, str);
-    	//std::cerr << str << ' ' << transform_string(str) << '\n';
-	//return in_;
-	//base.hv.resize(transform_string(str));
+    	std::string kostyl__;
     	int n;
     	in >> n;
     	base.hv.resize(n);
+    	std::getline(in, kostyl__);
 
     	for (auto& it : base.hv)
     		std::getline(in, it);
