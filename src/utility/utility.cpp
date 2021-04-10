@@ -1,6 +1,8 @@
 #include "utility.h"
 
-//location_t number_of_locations = 1;
+location_t get_number_of_locations() {
+	return number_of_locations;
+}
 
 void print_locations() {
 	for (int i = 0; i < number_of_locations; ++i)

@@ -37,7 +37,7 @@ date_t get_date() {
 	if (is_correct_date(date))
 		return date;
 
-	print_warning();
+	print_warning("Wrong date");
 	return get_date();	
 }
 
@@ -45,14 +45,14 @@ location_t get_location() {
 	std::cout << "Insert your current location\n";
 	print_locations();
 	location_t loc;
-	std::cout << "total number: " << number_of_locations << '\n';
+	std::cout << "total number: " << get_number_of_locations() << '\n';
 	std::cout << "Enter: ";
 	std::cin >> loc;
 
-	if (loc < number_of_locations)
+	if (loc < get_number_of_locations())
 		return loc;
 
-	print_warning();
+	print_warning("Wrong location");
 	return get_location();
 }
 

@@ -2,6 +2,7 @@
 #include "square.h"
 #include <string>
 #include <memory>
+#include <stdint.h>
 #include <map>
 
 date_t get_date();

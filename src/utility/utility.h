@@ -7,10 +7,11 @@
 
 using location_t = uint8_t;
 
-location_t const number_of_locations = 1;
+constexpr location_t number_of_locations = 1;
 
 std::string location[number_of_locations] = {"Kuzminki"};
 
+location_t get_number_of_locations();
 void print_locations();
 
 using date_t = std::string;
