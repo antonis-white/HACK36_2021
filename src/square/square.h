@@ -5,8 +5,6 @@
 #include <queue>
 #include <vector>
 
-using comment_t = std::string;
-
 class square_t{
 	public:
 		std::deque <int> scores;
