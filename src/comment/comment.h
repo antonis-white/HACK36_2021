@@ -1,2 +1,10 @@
 #pragma once
 #include "registration.h"
+#include <stdint.h>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <map>
+#include <deque>
+#include <queue>
+#include <memory>

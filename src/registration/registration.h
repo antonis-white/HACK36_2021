@@ -1,9 +1,13 @@
 #pragma once
 #include "square.h"
-#include <string>
-#include <memory>
 #include <stdint.h>
+#include <iostream>
+#include <string>
+#include <vector>
 #include <map>
+#include <deque>
+#include <queue>
+#include <memory>
 
 date_t get_date();
 uint8_t get_location();

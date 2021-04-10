@@ -3,6 +3,10 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <map>
+#include <deque>
+#include <queue>
+#include <memory>
                         
 
 using location_t = uint8_t;
@@ -15,7 +19,7 @@ location_t get_number_of_locations();
 void print_locations();
 
 using date_t = std::string;
-int transform_string(std::string s){
+int transform_string(const std::string& s){
 	int res = 0, p = 1;
 	for(int i = s.size() - 1; i >= 0; i--){
 		res += int(s[i] - '0') * p;
@@ -38,7 +42,7 @@ bool is_correct_date(date_t cur_date){
 	cur.resize(3);
 	int d, m, y;
 	int j = 0, cnt_of_points = 0;
-	for(int i = 0; i < cur_date.size(); i++){
+	for(size_t i = 0; i < cur_date.size(); i++){
 		if((cur_date[i] >= '0' && cur_date[i] <= '9') || cur_date[i] == '.'){
 			if(cur_date[i] == '.'){
 				cnt_of_points++;

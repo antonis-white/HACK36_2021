@@ -1,17 +1,22 @@
 #pragma once
 #include "graphics.h"
-
+#include <stdint.h>
 #include <iostream>
-#include <queue>
+#include <string>
 #include <vector>
+#include <map>
+#include <deque>
+#include <queue>
+#include <memory>
 
 class square_t{
 	public:
-		std::deque <int> scores;
-		int max_cnt = 10;
-		int avr_score;
+		std::deque<uint8_t> scores;
+		uint8_t max_cnt = 10;
+		uint8_t avr_score;
 		std::deque<comment_t> comments;
-		square_t(){
+		
+		square_t() {
 			for(int i = 0; i < max_cnt; i++){
 				scores.push_front(10);
 			}
