@@ -14,6 +14,10 @@ void run_app() {
 	preparation();
 
 	user_ptr user = registration();
+	bool not_exited = true;
+	while (not_exited) {
+		not_exited = tick(user);
+	}
 
 	finish();
 }

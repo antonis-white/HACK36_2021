@@ -61,6 +61,10 @@ location_t location_base::count() const {
 	return hv.size();
 }
 
+const std::string location_base::operator[](location_t loc) const {
+	return hv[loc];
+}
+
 void location_base::print() {
 	int ind = 0;
 	for (auto& s : hv) {
@@ -76,10 +80,12 @@ std::istream& operator>>(std::istream& in_, location_base& base) {
 
 	std::ifstream in("location_data_base.txt", std::ios::in);
     	
-    	std::string str;
-    	std::getline(in, str);
-
-       	base.hv.resize(transform_string(str));
+    	//std::string str;
+    	//std::getline(in, str);
+	//base.hv.resize(transform_string(str));
+    	int n;
+    	in >> n;
+    	base.hv.resize(n);
     	for (auto& it : base.hv)
     		std::getline(in, it);
     	

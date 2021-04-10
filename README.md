@@ -13,8 +13,9 @@ HACK36 project repository
 
 * Tech stack:
     1. c++
-    2. cmake
-    3. bash
+    2. CMake
+    3. Make
+    4. Bash
 
 * Idea:
     After discussing women's safety theme with

@@ -8,3 +8,11 @@
 #include <deque>
 #include <queue>
 #include <memory>
+
+void print_cap(user_ptr& user);
+
+void location_changer(user_ptr& user);
+
+void aller_button_click(user_ptr& user);
+ 
+bool tick(user_ptr& user);

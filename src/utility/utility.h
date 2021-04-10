@@ -36,6 +36,7 @@ public:
 	void print();
 	friend std::istream& operator>>(std::istream& in, location_base& base);
 	friend std::ostream& operator<<(std::ostream& out, const location_base& base);
+	const std::string operator[](location_t loc) const;
 };
 
 location_base& global_location_base();
@@ -126,7 +127,7 @@ public:
 		if (ct.rating > 0) out << '+';
 		if (ct.rating < 0) out << '-';
 		out << ct.rating << " | " << ct.username << '\n';
-		out << '\t' << ct.text;
+		out << ct.text;
 		return out; 
 	}
 };

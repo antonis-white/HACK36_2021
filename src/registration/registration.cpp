@@ -19,13 +19,17 @@ date_t get_date() {
 }
 
 location_t get_location() {
-	std::cout << "Insert your current location\n";
+	std::cout << "\tInsert your current location\n";
 	global_location_base().print();
-	location_t loc;
 	std::cout << "Enter: ";
-	std::cin >> loc;
-
-	std::cout << loc << ' ' << global_location_base().count() << ' ' << (loc < global_location_base().count()) << '\n';
+	
+	std::string locs;
+	for (char c : locs)
+		if (!isdigit(c)) {
+			print_warning();
+			return get_location();
+		}	
+	location_t loc = transform_string(locs);
 
 	if (loc < global_location_base().count())
 		return loc;
@@ -80,14 +84,20 @@ user_ptr get_user(date_t date, location_t loc) {
 	std::cout << "1. Sign up\n";
 	std::cout << "2. Sign in\n";
 	std::cout << "Enter: ";
-	int tp;
-	std::cin >> tp;
+	
+	std::string tps;
+	std::cin >> tps;
 
-	switch (tp) {
-		case 1:
+	if (tps.size() > 1) {
+		print_warning();
+		return std::move(get_user(date, loc));
+	}
+
+	switch (tps[0]) {
+		case '1':
 			return std::move(sign_up(date, loc));
 			break;
-		case 2:
+		case '2':
 			return std::move(sign_in(date, loc));
 			break;
 		default:
