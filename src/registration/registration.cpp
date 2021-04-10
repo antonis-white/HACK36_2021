@@ -24,6 +24,7 @@ location_t get_location() {
 	std::cout << "Enter: ";
 	
 	std::string locs;
+	std::cin >> locs;
 	for (char c : locs)
 		if (!isdigit(c)) {
 			print_warning();

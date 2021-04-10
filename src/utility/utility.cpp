@@ -17,11 +17,7 @@ void user_base::add_user(const std::string& name, const std::string& pwd) {
 }
 
 std::istream& operator>>(std::istream& in_, user_base& base) {
-	base.add_user("AD", "1967");
-	base.add_user("antonis-white", "abacaba");
-	return in_;
-
-	std::ifstream in("user_data_base.txt", std::ios::in);
+	std::ifstream in("../src/utility/user_data_base.txt", std::ios::in);
 
 	int n;
 	std::string login, password;
@@ -36,9 +32,7 @@ std::istream& operator>>(std::istream& in_, user_base& base) {
 }
 
 std::ostream& operator<<(std::ostream& out_, const user_base& base) {
-	return out_;
-	
-	std::ofstream out("location_data_base.txt", std::ios::out);
+	std::ofstream out("../src/utility/user_data_base.txt", std::ios::out);
 
 	out << base.name_pwd.size() << '\n';
 	for (auto [name, pwd] : base.name_pwd)
@@ -74,18 +68,17 @@ void location_base::print() {
 }
 
 std::istream& operator>>(std::istream& in_, location_base& base) {
-	base.hv.emplace_back("Kuzminki");
-	base.hv.emplace_back("MIPT");
-	return in_;
-
-	std::ifstream in("location_data_base.txt", std::ios::in);
+	std::ifstream in("../src/utility/location_data_base.txt", std::ios::in);
     	
     	//std::string str;
     	//std::getline(in, str);
+    	//std::cerr << str << ' ' << transform_string(str) << '\n';
+	//return in_;
 	//base.hv.resize(transform_string(str));
     	int n;
     	in >> n;
     	base.hv.resize(n);
+
     	for (auto& it : base.hv)
     		std::getline(in, it);
     	
@@ -94,9 +87,7 @@ std::istream& operator>>(std::istream& in_, location_base& base) {
 }
 
 std::ostream& operator<<(std::ostream& out_, const location_base& base){
-	return out_;
-
-	std::ofstream out("location_data_base.txt", std::ios::out);
+	std::ofstream out("../src/utility/location_data_base.txt", std::ios::out);
 	
 	out << base.count() << '\n';
 	for(auto loc : base.hv)
