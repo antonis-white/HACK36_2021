@@ -9,6 +9,8 @@
 #include <queue>
 #include <memory>
 
+void new_location(user_ptr& user);
+
 void location_changer(user_ptr& user);
 
 void aller_button_click(user_ptr& user);

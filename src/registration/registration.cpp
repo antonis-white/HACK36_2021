@@ -5,14 +5,6 @@ user_t::user_t(const std::string& name, date_t date, location_t location) :
 		date(date), 
 		location(location) {}
 
-void print_cap(user_ptr& user) {
-	print_sep_line();
-	std::cout << "Username: " << user->name << '\n';
-	std::cout << "Location: " << global_location_base()[user->location] << '\n';
-	std::cout << "Safety level: " << '\n';
-	std::cout << "Number of comments: " << '\n';
-}
-
 date_t get_date() {
 	date_t date;
 	std::cout << "Insert current date: ";
@@ -26,7 +18,7 @@ date_t get_date() {
 }
 
 location_t get_location() {
-	std::cout << "\tInsert your current location\n";
+	std::cout << "\tSelect location:\n";
 	global_location_base().print();
 	std::cout << "Enter: ";
 	
@@ -118,5 +110,14 @@ user_ptr registration() {
 	date_t date = get_date();
 	location_t loc = get_location();
 	return std::move(get_user(date, loc));
+}
+
+///-----------print user cap-------------------///
+void print_cap(user_ptr& user) {
+	print_sep_line();
+	std::cout << "Username: " << user->name << '\n';
+	std::cout << "Location: " << global_location_base()[user->location] << '\n';
+	std::cout << "Safety level: " << '\n';
+	std::cout << "Number of comments: " << '\n';
 }
 	

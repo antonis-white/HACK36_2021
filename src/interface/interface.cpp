@@ -1,7 +1,42 @@
 #include "interface.h"
 
-void location_changer(user_ptr& user) {}
-void allert_button_click(user_ptr& user) {}
+void new_location(user_ptr& user) {
+	print_sep_line();
+		
+}
+
+void location_changer(user_ptr& user) {
+	print_sep_line();
+	std::cout << "Do you want to add new location (Y/N)?: ";
+	std::string s;
+	std::cin >> s;
+
+	if (s.size() != 1) {
+		print_warning();
+		location_changer(user);
+		return;
+	}
+	
+	switch (s[0]) {
+		case 'Y':
+			new_location(user);
+			break;
+		case 'N':
+			user->location = get_location();
+			break;	
+		default:
+			print_warning();
+			location_changer(user);
+	}
+}
+
+void allert_button_click(user_ptr& user) {
+	print_sep_line();
+	std::cout << "\t\tALLERT!!\n";
+	std::cout << user->name << " asked for help\n";
+	std::cout << "When: " << user->date << '\n';
+	std::cout << "Where: " << global_location_base()[user->location] << '\n';
+}
 
 bool tick(user_ptr& user) {
 	print_cap(user);

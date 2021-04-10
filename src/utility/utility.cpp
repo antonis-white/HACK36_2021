@@ -55,8 +55,12 @@ location_t location_base::count() const {
 	return hv.size();
 }
 
-const std::string location_base::operator[](location_t loc) const {
+const std::string& location_base::operator[](location_t loc) const {
 	return hv[loc];
+}
+
+void location_base::add_location(const std::string& name) {
+	hv.push_back(name);
 }
 
 void location_base::print() {

@@ -34,9 +34,10 @@ public:
 	location_base();
 	location_t count() const;
 	void print();
+	void add_location(const std::string& name);
 	friend std::istream& operator>>(std::istream& in, location_base& base);
 	friend std::ostream& operator<<(std::ostream& out, const location_base& base);
-	const std::string operator[](location_t loc) const;
+	const std::string& operator[](location_t loc) const;
 };
 
 location_base& global_location_base();
@@ -113,6 +114,11 @@ bool is_correct_date(date_t cur_date){
 	return 1;
 }
 
+const std::string& end_sep() {
+	static sep = "</end/>";
+	return sep;
+}
+
 class comment_t{
 public:
 	std::string username, text;
@@ -128,6 +134,12 @@ public:
  
 	void like() { ++rating; }
 	void dislike(){ --rating; }
+	friend std::istream& operator>>(std::istream& in, comment_t& ct) {
+			 	
+	}
+	void put_comment(std::ostream& out, const comment_& ct) {
+		
+	}
 	friend std::ostream& operator<< (std::ostream &out, const comment_t &ct){
 		out << '\t' << ct.cur_date << '\n';
 		if (ct.rating > 0) out << '+';

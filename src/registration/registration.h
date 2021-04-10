@@ -12,8 +12,6 @@
 date_t get_date();
 location_t get_location();
 
-void print_cap(user_ptr& user);
-
 class user_t {
 public:
 	std::string name;
@@ -32,3 +30,5 @@ user_ptr sign_in(date_t date, location_t loc);
 user_ptr sign_up(date_t date, location_t loc);
 
 user_ptr registration();
+
+void print_cap(user_ptr& user);
