@@ -146,9 +146,7 @@ public:
 			std::getline(in, cur);
 		}	
 		ct.text = res;
-	}
-	void put_comment(std::ostream& out, const comment_t& ct) {
-		out << ct.username << " " << ct.cur_date << " " << ct.rating << '\n' << ct.text << end_sep();
+		return in;
 	}
 	friend std::ostream& operator<< (std::ostream &out, const comment_t &ct){
 		out << '\t' << ct.cur_date << '\n';
@@ -158,3 +156,7 @@ public:
 		return out; 
 	}
 };
+
+void put_comment(std::ostream& out, const comment_t& ct) {
+	out << ct.username << " " << ct.cur_date << " " << ct.rating << '\n' << ct.text << end_sep() << '\n';
+}
