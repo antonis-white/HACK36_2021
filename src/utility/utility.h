@@ -115,7 +115,7 @@ bool is_correct_date(date_t cur_date){
 }
 
 const std::string& end_sep() {
-	static sep = "</end/>";
+	static std::string sep = "</end/>";
 	return sep;
 }
 
@@ -125,25 +125,34 @@ public:
 	date_t cur_date;
 	int rating;
  
-	comment_t(std::string nm, date_t dt, std::string tx){
-		username = nm;
-		cur_date = dt;
-		text = tx;
-		rating = 0;
-	}
+        comment_t(const std::string& nm,date_t dt, int rating = 0) :
+        	username(nm),
+        	cur_date(dt),
+        	rating(rating) {}
+	comment_t(const std::string& nm, date_t dt, const std::string& tx) :
+		username(nm),
+		text(tx),
+		cur_date(dt),
+		rating(0) {}
  
 	void like() { ++rating; }
 	void dislike(){ --rating; }
 	friend std::istream& operator>>(std::istream& in, comment_t& ct) {
-			 	
+		std::string cur = "", res = "";
+		std::getline(in, cur);
+		while(cur != end_sep()){
+			res += cur;
+			res += '\n';
+			std::getline(in, cur);
+		}	
+		ct.text = res;
 	}
-	void put_comment(std::ostream& out, const comment_& ct) {
-		
+	void put_comment(std::ostream& out, const comment_t& ct) {
+		out << ct.username << " " << ct.cur_date << " " << ct.rating << '\n' << ct.text << end_sep();
 	}
 	friend std::ostream& operator<< (std::ostream &out, const comment_t &ct){
 		out << '\t' << ct.cur_date << '\n';
 		if (ct.rating > 0) out << '+';
-		if (ct.rating < 0) out << '-';
 		out << ct.rating << " | " << ct.username << '\n';
 		out << ct.text;
 		return out; 

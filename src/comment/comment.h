@@ -9,6 +9,6 @@
 #include <queue>
 #include <memory>
 
-void comment_reader(user_ptr& user);
+void comment_reader(user_ptr& user, int index = 0);
 
 void comment_writer(user_ptr& user);

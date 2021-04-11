@@ -61,6 +61,8 @@ public:
 	int count() const;
 	friend std::istream& operator>>(std::istream& in, square_base& base);
 	friend std::ostream& operator<<(std::ostream& out, const square_base& base);
-	const std::string operator[](location_t loc) const;
+	square_t& operator[](location_t loc);
 	void add_square(const square_t& nw);
 };
+
+square_base& global_square_base();

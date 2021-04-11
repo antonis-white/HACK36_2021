@@ -1,8 +1,7 @@
 #include "interface.h"
 
 void new_location(user_ptr& user) {
-	print_sep_line();
-		
+	print_sep_line();	
 }
 
 void location_changer(user_ptr& user) {
