@@ -58,4 +58,12 @@ void comment_reader(user_ptr& user, int index) {
 	comment_reader(user, new_index);
 }
 
-void comment_writer(user_ptr& user) {}
+void comment_writer(user_ptr& user) {
+	print_cap(user);
+
+	std::cout << "Write your comment below (last string must be exactly \"</end/>\")\n";
+	comment_t com(user->name, user->date);
+	std::cin >> com;
+	global_square_base()[user->location].add_comment(com);
+	std::cout << "Comment successfully added\n";
+}

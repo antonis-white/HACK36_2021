@@ -115,9 +115,10 @@ user_ptr registration() {
 ///-----------print user cap-------------------///
 void print_cap(user_ptr& user) {
 	print_sep_line();
+	square_t square = global_square_base()[user->location];
 	std::cout << "Username: " << user->name << '\n';
 	std::cout << "Location: " << global_location_base()[user->location] << '\n';
-	std::cout << "Safety level: " << '\n';
-	std::cout << "Number of comments: " << '\n';
+	std::cout << "Safety level: " << square.get_average_score() << '\n';
+	std::cout << "Number of comments: " << square.comments.size() << '\n';
 }
 	

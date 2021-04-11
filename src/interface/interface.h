@@ -9,6 +9,8 @@
 #include <queue>
 #include <memory>
 
+void give_score(square_t& square);
+
 void new_location(user_ptr& user);
 
 void location_changer(user_ptr& user);
