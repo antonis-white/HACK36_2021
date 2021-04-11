@@ -32,6 +32,8 @@ std::istream& operator>>(std::istream& in_, square_base& base) {
  			date_t date;
  			int rating;
  			in >> name >> date >> rating;
+ 			std::string costyl__;
+ 			std::getline(in, costyl__);
  			comment_t t(name, date, rating);
  			in >> t;
  			base[i].comments.push_back(t);

@@ -11,6 +11,10 @@ HACK36 project repository
     1. Anton Belyi (MIPT, Russia)
     2. Dmitry Anokhov (MPEI, Russia)
 
+* Video: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+
+* Presentation: https://drive.google.com/file/d/1M7v3Iu9rP4TJZ_88gY8qGJW9VPLpND4r/view
+
 * Tech stack:
     1. c++
     2. CMake

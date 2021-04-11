@@ -1,10 +1,39 @@
-2
-10 10 10 10 10 10 10 10 10 10 
-0
-1 5 10 10 10 10 10 10 10 10 
+5
+2 10 10 10 10 10 10 10 10 10 
 1
-olya_masaeva 16.12.2002 -2
+stalin 30.9.1945 0
 
+awesome billiard
+</end/>
+5 5 10 10 10 10 10 10 10 10 
+3
+erlich 2.2.2002 0
 
+my swamp
+</end/>
+igor_koshkarev 23.7.2007 0
+
+hochu na phystech
+</end/>
+olya_masaeva 16.12.2002 -1
 Belyi zlo
 </end/>
+10 10 10 10 10 10 10 10 10 10 
+2
+erlich 2.2.2002 0
+
+not my swamp
+</end/>
+igor_koshkarev 23.7.2007 0
+
+ne hochu na mei
+</end/>
+1 10 10 10 10 10 10 10 10 10 
+1
+stalin 30.9.1945 0
+
+where is Raskolnikov?
+here?
+</end/>
+10 10 10 10 10 10 10 10 10 10 
+0
