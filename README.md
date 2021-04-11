@@ -53,5 +53,4 @@ HACK36 project repository
     5. cd build
     6. cmake ..
     7. make
-    8. cd ..
-    9. ./run.sh
+    8. ../bin/main.exe
